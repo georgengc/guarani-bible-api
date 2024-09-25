@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 
 const mateo = 'versions/GPC2006/mateo.json'
+
 let rawdata = fs.readFileSync(mateo);
 let data = JSON.parse(rawdata);
 
