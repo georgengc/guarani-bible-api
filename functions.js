@@ -13,7 +13,7 @@ function getChapters()
   {
     let chapter = {}
     chapter.number = i+1
-    chapter.title = data.chapters[i].verses[0].head
+    chapter.title = data.chapters[i].verses[0].title
     chapters.push(chapter)
   }
 
