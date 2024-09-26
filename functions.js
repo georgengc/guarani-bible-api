@@ -74,26 +74,31 @@ function getChapter(book, number)
   }
   else
   {
-    return 'Chapter not found' //not working
+    return 'Chapter not found'
   }
 }
 
 function getVerse(book, chapter, verse)
 {
   let bookdata = getJSON(getBookPath(book))
+  let versedata = null
   for (let i = 0; i < bookdata.chapters[chapter-1].verses.length; i++)
   {
-    if (bookdata.chapters[chapter-1].verses[i][verse.toString()])
+    let versenumber = bookdata.chapters[chapter-1].verses[i].number
+    if (versenumber)
     {
-      verse = bookdata.chapters[chapter-1].verses[i]
+      if (versenumber.includes(verse))
+      {
+        versedata = bookdata.chapters[chapter-1].verses[i]
+        if (versedata)
+        {
+          return versedata
+        }
+        else
+        {
+          return 'Verse not found'
+        }
+      }
     }
-  }
-  if (verse)
-  {
-    return verse
-  }
-  else
-  {
-    return 'Verse not found' //not working
   }
 }

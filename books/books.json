@@ -1,6 +1,6 @@
 [
-    {"number": "1", "name": "mateo"},
-    {"number": "2", "name": "marcos"},
-    {"number": "3", "name": "lucas"},
-    {"number": "4", "name": "juan"}
+    {"number": "1", "name": "mateo", "id": "mat", "chapters": 28},
+    {"number": "2", "name": "marcos", "id": "mar", "chapters": 16},
+    {"number": "3", "name": "lucas", "id": "luc", "chapters": 24},
+    {"number": "4", "name": "juan", "id": "jua", "chapters": 21}
 ]
