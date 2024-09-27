@@ -92,7 +92,7 @@ function getVerse(book, chapter, verse)
         versedata = bookdata.chapters[chapter-1].verses[i]
         if (versedata)
         {
-          return versedata
+          return {'verse': versedata.text}
         }
         else
         {
