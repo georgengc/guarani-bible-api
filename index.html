@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#2a3140" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Guaraní Bible API</title>
+  <meta name="description"
+    content="Some simple search functions for all the different versions of the Bible in the Guaraní language." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/pico.green.min.css" />
+</head>
+<style>
+  h1, .value {
+    color: rgb(78 179 27);
+  }
+  .code {
+    color: white;
+  }
+</style>
+<body style="min-height:100vh">
+  <main class="container has-table-of-contents page-classless">
+    <hgroup>
+      <h1>Guaraní Bible API (WORK IN PROGRESS, DOESN'T WORK YET)</h1>
+      <p>Some simple search functions for all the different versions of the Bible in the Guaraní language.</p>
+    </hgroup>
+    
+    <div id="content" role="document">
+      <section>
+        <p>First, you can get all of the different versions using <code class="value">getVersions()</code></p>
+        <div class="code" data-theme="dark">
+          <pre class="prismjs"><code class="language-css"><span class="token comment">[</span><span class>
+</span><span class></span><span class="token selector">    { "id": <span class="value">"GRN"</span>, "name": <span class = "value">"Tupa Nandejara"</span>, "code": <span class = "value">"GRN1913"</span>, "year": <span class = "value">1913</span> }
+</span><span class="token selector">    { "id": <span class = "value">"GPC"</span>, "name": <span class = "value">"Nandejara Ne'e"</span>, "code": <span class = "value">"GPC2006"</span>, "year": <span class = "value">2006</span> }
+</span><span class="token selector">    { "id": <span class = "value">"GPC"</span>, "name": <span class = "value">"Nandejara Ne'e"</span>, "code": <span class = "value">"GPC2006"</span>, "year": <span class = "value">2006</span> }</span><span class>
+<span class="token punctuation">]</span></code></pre>
+        </div>
+        <p>Then you can look at the books inside each version using <code class="value">getBooks('GCP')</code> or <code class="value">getBooks('GRN')</code> or <code class="value">getBooks('TTV')</code></p>
+        <div class="code" data-theme="dark">
+          <pre class="prismjs"><code class="language-css"><span class="token comment">[</span><span class>
+</span><span class></span><span class="token selector">    { "number": <span class="value">"1"</span>, "name": <span class="value">"mateo"</span>, "id": <span class="value">"mat"</span>, "chapters": <span class="value">28</span> },
+</span><span class="token selector">    { "number": <span class="value">"2"</span>, "name": <span class="value">"marcos"</span>, "id": <span class="value">"mar"</span>, "chapters": <span class="value">16</span> },
+</span><span class="token selector">    { "number": <span class="value">"3"</span>, "name": <span class="value">"lucas"</span>, "id": <span class="value">"luc"</span>, "chapters": <span class="value">24</span> },</span><span class><span class>
+</span>    { "number": <span class="value">"4"</span>, "name": <span class="value">"juan"</span>, "id": <span class="value">"jua"</span>, "chapters": <span class="value">21</span> }<span class></span>
+<span class="token punctuation">]</span></code></pre>
+        </div>
+        <div class="code" data-theme="dark">
+        <p>After that you can view a list of the chapters within a book using <code class="value">getChapters('GCP', 'mat')</code></p>
+        <pre class="prismjs"><code class="language-css"><span class="token comment">[</span><span class>
+</span><span class></span><span class="token selector">    { number: <span class="value">1</span>, title: <span class="value">"Jesucristo ypy kuerakue"</span> },
+</span><span class="token selector">    { number: <span class="value">2</span>, title: <span class="value">"Karai arandu kuéra ou mitã andúvo"</span> },
+</span><span class="token selector">    { number: <span class="value">3</span>, title: <span class="value">"Juan Bautista oñemoñe'ẽ"</span> },</span><span class><span class>
+</span>    { number: <span class="value">4</span>, title: <span class="value">"Aña oha'ã vai ramo guare Jesúspe"</span> },<span class></span>
+</span>    { number: <span class="value">5</span>, title: <span class="value">"Jesús oñemoñe'ẽ peteĩ yvyty ári guive"</span> },<span class></span>
+    ...
+<span class="token punctuation">]</span></code></pre>
+        </div>
+        <div class="code" data-theme="dark">
+          <p>Finally you can get a specific verse by using <code class="value">getVerse('GCP', 'jua', 3, 16)</code></p>
+          <pre class="prismjs"><code class="language-css"><span class="token selector">{ verse: <span class="value">"Tupã ohayhu etereígui opa yvypórape, ome'ẽ vaekue Ta'ýra peteĩete, 
+                ani haguã omano umi hese ojeroviáva, oikove haguã uvei opa ára."</span> }</code></pre>
+          </div>
+        <p>View the json files directly <a data-discover="true" href="/docs/version-picker">here</a> to easily view the data handled by this API</p>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <section>
+        <p>Free to use for all.</p>
+      </section>
+    </div>
+  </footer>
+</body>
+</html>
